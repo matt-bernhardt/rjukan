@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Solarspell Demonstration</title>
+	<script type="text/javascript" src="js/lib/angular.min.js"></script>
+	<script type="text/javascript" src="js/lib/angular-route.min.js"></script>
+
+	<script type="text/javascript" src="js/app.js"></script>
+	<script type="text/javascript" src="js/controllers.js"></script>
+	
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<div class="main">
+		<header>
+			SolarSPELL Demonstration
+		</header>
+		<nav>
+			<ul>
+				<li><a href="#/index">Home</a></li>
+				<li><a href="#/catalog">Catalog</a></li>
+			</ul>
+		</nav>
+		<div id="view" ng-view>
+			<h1>It works!</h1>
+		</div>
+		<footer>
+			This platform was built by Matt Bernhardt as a proof of concept. Contact Matt at matt.j.bernhardt@gmail.com with any questions, suggestions, or concerns.
+		</footer>
+	</div>
+</body>
+</html>

@@ -1,0 +1,108 @@
+body {
+	background-color: #f2f2f2;
+	font-family: Arial, sans-serif;
+	font-size: 14px;
+}
+h1 {
+	font-size: 1.5rem;
+	font-weight: bold;
+	margin-bottom: 1rem;
+}
+h2 {
+	font-size: 1.25rem;
+	font-weight: bold;
+}
+p {
+	margin-bottom: 1rem;
+}
+
+/* Page regions */
+header {
+	font-size: 2rem;
+	color: #595959;
+
+}
+nav {
+	padding: 0.5rem 0;
+}
+nav ul {
+	display: table-row;
+}
+nav ul li {
+	display: table-cell;
+}
+nav ul li a {
+	text-decoration: none;
+	padding: 0.5rem;
+	display: block;
+}
+nav ul li a:active {
+	text-decoration: underline;
+}
+nav ul li:first-child a {
+	padding-left: 0rem;
+
+}
+section {
+
+}
+#view {
+}
+#chart {
+	border: 1px solid #ccc;
+}
+footer {
+	clear: both;
+	margin-top: 2rem;
+	border-top: 1px solid #959595;
+	padding-top: 1rem;
+	color: #959595;
+}
+
+.main {
+	border: 1px solid #d1d1d1;
+	width: 960px;
+	background-color: #fff;
+	padding: 1rem;
+	margin: 1rem auto;
+}
+section {
+
+}
+
+section aside {
+	float: left;
+	width: 19%;
+	margin-right: 1%;
+}
+aside div.checkboxes {
+	/*
+	max-height: 10rem;
+	overflow-y: auto;
+	overflow-x: hidden;
+	*/
+}
+aside div.checkboxes label {
+	display: block;
+}
+
+section section.content {
+	float: left;
+	width: 80%;
+}
+table.list {
+}
+
+table.list thead th {
+	font-size: 1rem;
+	font-weight: bold;
+	text-align: left;
+	border-bottom: 1px solid #ccc;
+}
+table.list td {
+	font-size: .75rem;
+	padding: 0.25rem 0;
+}
+table.list td {
+	padding-right: 0.5rem;
+}
