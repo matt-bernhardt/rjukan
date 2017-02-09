@@ -1,14 +1,13 @@
 <section class="players">
 	<h1>Catalog</h1>
-	<p>Please note that this interface is subject to change.</p>
 	<aside>
 		<h2><label for="SearchText">Search Text</label></h2>
 		<input id="SearchText" type="text" placeholder="Search word..." name="SearchText" ng-model="search.SearchText">
 		<hr>
-		<h2>Tool</h2>
+		<h2>Subject</h2>
 		<div class="checkboxes">
-			<label ng-repeat="tool in filter.SearchTool">
-				<input type="checkbox" ng-model="search.SearchTool[tool]">{{tool}}
+			<label ng-repeat="subject in filter.subject">
+				<input type="checkbox" ng-model="search.subject[subject]">{{subject}}
 			</label>
 		</div>
 		<hr>
@@ -23,7 +22,7 @@
 		<table class="list data">
 			<thead>
 				<tr>
-					<th class="">Tool</th>
+					<th class="">Subject</th>
 					<th class="">Type</th>
 					<th class=""><a href="" ng-click="predicate = '-visits'">Count</a></th>
 					<th class=""><a href="" ng-click="predicate = 'SearchText'">Search Text</a></th>
@@ -31,7 +30,7 @@
 			</thead>
 			<tbody>
 				<tr ng-repeat="search in searches | searchFilter: search | orderBy:predicate">
-					<td>{{search.SearchTool[0]}}</td>
+					<td>{{search.subject}}</td>
 					<td>{{search.SearchType[0]}}</td>
 					<td>{{search.visits[0]}}</td>
 					<td>{{search.SearchText[0]}}</td>

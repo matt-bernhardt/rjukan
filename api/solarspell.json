@@ -17,5 +17,12 @@
 		"filename": "Number line 1.mp4",
 		"category": "Multiplication & Division",
 		"subcategory": "Multiplication"
+	},
+	{
+		"subject": "Science",
+		"type": "Videos",
+		"filename": "Parts of a cell.mp4",
+		"category": "Life Science",
+		"subcategory": "Cells"
 	}
 ]
