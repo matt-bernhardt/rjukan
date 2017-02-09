@@ -4,16 +4,25 @@ tabControllers.controller('ListController', ['$scope', '$http', function($scope,
     // initialize faceted search object
     $scope.search = {
         "SearchText" : "",
-        "SearchTool": {},
+        "subject": {},
         "SearchType": {}
     };
     $scope.filter = {};
-	$http.get('api/FrontPageCleaned.json').success(function(data) {
+//	$http.get('api/FrontPageCleaned.json').success(function(data) {
+//        console.log('Success!');
+//		$scope.searches = data;
+//        $scope.filter.SearchTool = filterizeMulti(data,"SearchTool");
+//        $scope.filter.SearchType = filterizeMulti(data,"SearchType");
+//	}).error(function(error) {
+//        console.log('Error');
+//    });
+    $http.get('api/solarspell.json').success(function(data) {
         console.log('Success!');
-		$scope.searches = data;
-        $scope.filter.SearchTool = filterizeMulti(data,"SearchTool");
-        $scope.filter.SearchType = filterizeMulti(data,"SearchType");
-	}).error(function(error) {
+        console.log(data);
+        $scope.searches = data;
+        $scope.filter.subject = filterize(data,"subject");
+        console.log( filterize(data,"subject") );
+    }).error(function(error) {
         console.log('Error');
     });
 
@@ -31,6 +40,9 @@ myApp.filter('searchFilter', function() {
                 var any_filter_set = false;
                 if ( searchobj.hasOwnProperty('SearchText') && searchobj.SearchText != "" ) {
                     any_filter_set = true;
+                }
+                for ( subject in searchobj.subject) {
+                    any_filter_set = any_filter_set || searchobj.subject[ subject ];
                 }
                 for ( SearchTool in searchobj.SearchTool) {
                     any_filter_set = any_filter_set || searchobj.SearchTool[ SearchTool ];
@@ -50,10 +62,10 @@ myApp.filter('searchFilter', function() {
                     return false;
                 }
 
-                // Search Tool
-                for ( SearchTool in searchobj.SearchTool ) {
-                    any_value_set = any_value_set || searchobj.SearchTool[SearchTool];
-                    passes_filters = passes_filters || (searchobj.SearchTool[ SearchTool ] && item.SearchTool == SearchTool);
+                // Search Subject
+                for ( subject in searchobj.subject ) {
+                    any_value_set = any_value_set || searchobj.subject[ subject ];
+                    passes_filters = passes_filters || (searchobj.subject[ subject ] && item.subject == subject);
                 }
                 if( any_value_set && !passes_filters ) {
                     return false;
