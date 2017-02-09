@@ -2,19 +2,22 @@
 	{
 		"subject": "Math",
 		"format": "Videos",
-		"title": "Telling time exercise example 1.mp4",
+		"title": "Telling time exercise example 1",
+		"filename": "Telling time exercise example 1.mp4",
 		"category": "Telling Time"
 	},
 	{
 		"subject": "Math",
 		"format": "Videos",
-		"title": "Telling time exercise example 2.mp4",
+		"title": "Telling time exercise example 2",
+		"filename": "Telling time exercise example 2.mp4",
 		"category": "Telling Time"
 	},
 	{
 		"subject": "Math",
 		"format": "Videos",
-		"title": "Number line 1.mp4",
+		"title": "Number line 1",
+		"filename": "Number line 1.mp4",
 		"category": "Multiplication & Division",
 		"subcategory": "Multiplication"
 	},
@@ -29,7 +32,8 @@
 	{
 		"subject": "Science",
 		"format": "Videos",
-		"title": "Parts of a cell.mp4",
+		"title": "Parts of a cell",
+		"filename": "Parts of a cell.mp4",
 		"category": "Life Science",
 		"subcategory": "Cells"
 	},
@@ -45,6 +49,7 @@
 		"subject": "Language Arts",
 		"format": "Textbooks",
 		"title": "Island Alphabet Book",
+		"filename": "Island Alphabet Book.pdf",
 		"category": "Storybooks",
 		"subcategory": "English",
 		"subsubcategory": "Level 1"
