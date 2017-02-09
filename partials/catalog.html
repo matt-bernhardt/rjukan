@@ -34,7 +34,7 @@
 				<tr ng-repeat="search in searches | searchFilter: search | orderBy:predicate">
 					<td>{{search.subject}}</td>
 					<td>{{search.format}}</td>
-					<td>{{search.title}}</td>
+					<td><a href="{{search.filename}}">{{search.title}}</a></td>
 					<td>{{search.category}}</td>
 					<td>{{search.subcategory}}</td>
 					<td>{{search.subsubcategory}}</td>
