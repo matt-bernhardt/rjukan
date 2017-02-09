@@ -75,15 +75,28 @@ section aside {
 	width: 19%;
 	margin-right: 1%;
 }
-aside div.checkboxes {
+aside h2 {
+	background-color: #7eb6e2;
+	border-bottom: 0.25em solid #344953;
+	padding: 0.25em;
+	font-size: 1.15em;
+}
+aside div.filter {
+	background-color: #bae0ff;
+	margin-bottom: 1em;
 	/*
 	max-height: 10rem;
 	overflow-y: auto;
 	overflow-x: hidden;
 	*/
 }
-aside div.checkboxes label {
+aside div.filter input {
+	padding: 0.25em;
+	margin: 0.25em;
+}
+aside div.filter label {
 	display: block;
+	padding: 0.25em;
 }
 
 section section.content {
@@ -91,13 +104,26 @@ section section.content {
 	width: 80%;
 }
 table.list {
+	width: 100%;
 }
 
 table.list thead th {
 	font-size: 1rem;
 	font-weight: bold;
 	text-align: left;
-	border-bottom: 1px solid #ccc;
+	border-bottom: 0.25em solid #344953;
+	background-color: #7eb6e2;
+}
+table.list thead th a {
+	text-decoration: none;
+	color: #000;
+	display: block;
+	padding: 0.25em;
+}
+table.list thead th a:hover,
+table.list thead th a:active,
+table.list thead th a:focus {
+	background-color: #bae0ff;
 }
 table.list td {
 	font-size: .75rem;

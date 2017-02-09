@@ -2,17 +2,17 @@
 	<h1>Catalog</h1>
 	<aside>
 		<h2><label for="SearchText">Search Text</label></h2>
-		<input id="SearchText" type="text" placeholder="Search word..." name="SearchText" ng-model="search.SearchText">
-		<hr>
+		<div class="filter">
+			<input id="SearchText" type="text" placeholder="Search word..." name="SearchText" ng-model="search.SearchText">
+		</div>
 		<h2>Subject</h2>
-		<div class="checkboxes">
+		<div class="filter checkboxes">
 			<label ng-repeat="subject in filter.subject">
 				<input type="checkbox" ng-model="search.subject[subject]">{{subject}}
 			</label>
 		</div>
-		<hr>
 		<h2>Format</h2>
-		<div class="checkboxes">
+		<div class="filter checkboxes">
 			<label ng-repeat="format in filter.format">
 				<input type="checkbox" ng-model="search.format[format]">{{format}}
 			</label>
