@@ -91,13 +91,26 @@ section section.content {
 	width: 80%;
 }
 table.list {
+	width: 100%;
 }
 
 table.list thead th {
 	font-size: 1rem;
 	font-weight: bold;
 	text-align: left;
-	border-bottom: 1px solid #ccc;
+	border-bottom: 0.25em solid #344953;
+	background-color: #7eb6e2;
+}
+table.list thead th a {
+	text-decoration: none;
+	color: #000;
+	display: block;
+	padding: 0.25em;
+}
+table.list thead th a:hover,
+table.list thead th a:active,
+table.list thead th a:focus {
+	background-color: #bae0ff;
 }
 table.list td {
 	font-size: .75rem;
