@@ -5,7 +5,7 @@ tabControllers.controller('ListController', ['$scope', '$http', function($scope,
     $scope.search = {
         "SearchText" : "",
         "subject": {},
-        "SearchType": {}
+        "format": {}
     };
     $scope.filter = {};
 //	$http.get('api/FrontPageCleaned.json').success(function(data) {
@@ -18,10 +18,9 @@ tabControllers.controller('ListController', ['$scope', '$http', function($scope,
 //    });
     $http.get('api/solarspell.json').success(function(data) {
         console.log('Success!');
-        console.log(data);
         $scope.searches = data;
         $scope.filter.subject = filterize(data,"subject");
-        console.log( filterize(data,"subject") );
+        $scope.filter.format = filterize(data,"format");
     }).error(function(error) {
         console.log('Error');
     });
@@ -44,8 +43,8 @@ myApp.filter('searchFilter', function() {
                 for ( subject in searchobj.subject) {
                     any_filter_set = any_filter_set || searchobj.subject[ subject ];
                 }
-                for ( SearchTool in searchobj.SearchTool) {
-                    any_filter_set = any_filter_set || searchobj.SearchTool[ SearchTool ];
+                for ( format in searchobj.format) {
+                    any_filter_set = any_filter_set || searchobj.format[ format ];
                 }
                 for ( SearchType in searchobj.SearchType) {
                     any_filter_set = any_filter_set || searchobj.SearchType[ SearchType ];
@@ -62,7 +61,7 @@ myApp.filter('searchFilter', function() {
                     return false;
                 }
 
-                // Search Subject
+                // Subject filter
                 for ( subject in searchobj.subject ) {
                     any_value_set = any_value_set || searchobj.subject[ subject ];
                     passes_filters = passes_filters || (searchobj.subject[ subject ] && item.subject == subject);
@@ -71,10 +70,10 @@ myApp.filter('searchFilter', function() {
                     return false;
                 }
 
-                // Search Type
-                for ( SearchType in searchobj.SearchType ) {
-                    any_value_set = any_value_set || searchobj.SearchType[SearchType];
-                    passes_filters = passes_filters || (searchobj.SearchType[ SearchType ] && item.SearchType == SearchType);
+                // Format filter
+                for ( format in searchobj.format ) {
+                    any_value_set = any_value_set || searchobj.format[ format ];
+                    passes_filters = passes_filters || (searchobj.format[ format ] && item.format == format);
                 }
                 if( any_value_set && !passes_filters ) {
                     return false;

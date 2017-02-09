@@ -11,10 +11,10 @@
 			</label>
 		</div>
 		<hr>
-		<h2>Type</h2>
+		<h2>Format</h2>
 		<div class="checkboxes">
-			<label ng-repeat="type in filter.SearchType">
-				<input type="checkbox" ng-model="search.SearchType[type]">{{type}}
+			<label ng-repeat="format in filter.format">
+				<input type="checkbox" ng-model="search.format[format]">{{format}}
 			</label>
 		</div>
 	</aside>
@@ -22,18 +22,22 @@
 		<table class="list data">
 			<thead>
 				<tr>
-					<th class="">Subject</th>
-					<th class="">Type</th>
-					<th class=""><a href="" ng-click="predicate = '-visits'">Count</a></th>
-					<th class=""><a href="" ng-click="predicate = 'SearchText'">Search Text</a></th>
+					<th class=""><a href="" ng-click="predicate = 'subject'">Subject</a></th>
+					<th class=""><a href="" ng-click="predicate = 'format'">Format</a></th>
+					<th class=""><a href="" ng-click="predicate = 'title'">Title</a></th>
+					<th class=""><a href="" ng-click="predicate = 'category'">Category</a></th>
+					<th class=""><a href="" ng-click="predicate = 'subcategory'">Sub</a></th>
+					<th class=""><a href="" ng-click="predicate = 'subsubcategory'">Sub Sub</a></th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr ng-repeat="search in searches | searchFilter: search | orderBy:predicate">
 					<td>{{search.subject}}</td>
-					<td>{{search.SearchType[0]}}</td>
-					<td>{{search.visits[0]}}</td>
-					<td>{{search.SearchText[0]}}</td>
+					<td>{{search.format}}</td>
+					<td>{{search.title}}</td>
+					<td>{{search.category}}</td>
+					<td>{{search.subcategory}}</td>
+					<td>{{search.subsubcategory}}</td>
 				</tr>
 			</tbody>
 		</table>
