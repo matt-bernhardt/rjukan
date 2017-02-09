@@ -3,7 +3,7 @@ var tabControllers = angular.module('tabControllers', []);
 tabControllers.controller('ListController', ['$scope', '$http', function($scope, $http) {
     // initialize faceted search object
     $scope.search = {
-        "SearchText" : "",
+        "title" : "",
         "subject": {},
         "format": {}
     };
@@ -40,7 +40,7 @@ myApp.filter('searchFilter', function() {
 
                 // Check for filters set
                 var any_filter_set = false;
-                if ( searchobj.hasOwnProperty('SearchText') && searchobj.SearchText != "" ) {
+                if ( searchobj.hasOwnProperty('title') && searchobj.title != "" ) {
                     any_filter_set = true;
                 }
                 for ( subject in searchobj.subject) {
@@ -57,7 +57,7 @@ myApp.filter('searchFilter', function() {
                 var passes_filters = false;
 
                 // Search Text
-                if ( searchobj.SearchText != "" && item.SearchText[0].indexOf(searchobj.SearchText) === -1 ) {
+                if ( searchobj.title != "" && item.title.indexOf(searchobj.title) === -1 ) {
                     return false;
                 }
 
