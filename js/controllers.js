@@ -29,6 +29,9 @@ tabControllers.controller('ListController', ['$scope', '$http', function($scope,
 
 myApp.filter('searchFilter', function() {
 
+    // This compares the content of the elements in the list array with the content of the search object.
+    // list      - array of objects that are being filtered
+    // searchobj - object containing properties on which to filter
     return function( list, searchobj ) {
 
         if (list != undefined) {
@@ -46,13 +49,10 @@ myApp.filter('searchFilter', function() {
                 for ( format in searchobj.format) {
                     any_filter_set = any_filter_set || searchobj.format[ format ];
                 }
-                for ( SearchType in searchobj.SearchType) {
-                    any_filter_set = any_filter_set || searchobj.SearchType[ SearchType ];
-                }
                 // If any_filter_set is still false, just pass everything through
                 if ( !any_filter_set ) { return !any_filter_set; }
 
-                // Still here? Do the filters pass?
+                // Initialize for title text filter
                 var any_value_set = false;
                 var passes_filters = false;
 
@@ -60,6 +60,10 @@ myApp.filter('searchFilter', function() {
                 if ( searchobj.SearchText != "" && item.SearchText[0].indexOf(searchobj.SearchText) === -1 ) {
                     return false;
                 }
+
+                // Initialize for subject category filter
+                var any_value_set = false;
+                var passes_filters = false;
 
                 // Subject filter
                 for ( subject in searchobj.subject ) {
@@ -69,6 +73,10 @@ myApp.filter('searchFilter', function() {
                 if( any_value_set && !passes_filters ) {
                     return false;
                 }
+
+                // Initialize for format category filter
+                var any_value_set = false;
+                var passes_filters = false;
 
                 // Format filter
                 for ( format in searchobj.format ) {
